@@ -1,4 +1,4 @@
-# spring_user_crud
+# SpringUsuarioCrud
 
 O projeto com um CRUD completo.
 
@@ -25,5 +25,13 @@ Banco de dados testados:
 - MySQL
 
 Telas:
+
 Login
 ![alt tag](/imagens/login.png)
+
+
+Cadastrar novo usuário
+![alt tag](/imagens/cadastro.png)
+
+Listagem
+![alt tag](/imagens/home.png)
