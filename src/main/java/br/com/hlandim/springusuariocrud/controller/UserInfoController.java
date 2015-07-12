@@ -28,7 +28,7 @@ import br.com.hlandim.springusuariocrud.service.IUserInfoService;
  */
 @Controller
 @RequestMapping("/user/**")
-public class UserController {
+public class UserInfoController {
 
 	@Autowired
 	private IUserInfoService userInfoService;
