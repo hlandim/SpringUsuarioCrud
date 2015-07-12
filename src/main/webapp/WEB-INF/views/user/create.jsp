@@ -84,8 +84,8 @@
 		      	      changeMonth: true,
 		      	      changeYear: true, 
 		      	      maxDate: "+0 +0",
-		      	      dateFormat: "dd/mm/yy"
-		      	    });
+		      	      dateFormat: "dd/mm/yy",
+		      	    }).attr('readonly','readonly');
 		      	});
 	      	 	
 	    	  	$('#form-create').submit(function() {
