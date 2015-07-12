@@ -3,6 +3,7 @@
 O projeto com um CRUD completo.
 
 Utilizando o Spring para criar um projeto web com um CRUD completo.
+
 Tecnologias utilizadas:
 - Spring MVC 4
 - Spring Security 4
