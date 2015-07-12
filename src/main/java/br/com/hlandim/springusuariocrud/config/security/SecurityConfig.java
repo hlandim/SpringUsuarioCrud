@@ -3,6 +3,7 @@ package br.com.hlandim.springusuariocrud.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -19,6 +20,7 @@ import br.com.hlandim.springusuariocrud.service.AuthenticationService;
  */
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -28,7 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private AuthenticationService authenticationService;
 
 	/**
-	 * Configuração principal, nela é definada como será feita a autenticação do usuário
+	 * Configuração principal, nela é definada como será feita a autenticação do
+	 * usuário
+	 * 
 	 * @param auth
 	 * @throws Exception
 	 */
@@ -39,15 +43,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**
 	 * Configuração das regras de acesso.
+	 * 
 	 * @param http
 	 * @throws Exception
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/resources/**", "/user/create/**", "/user/checkusername/**", "/login").permitAll()
-				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll();
+		http.authorizeRequests().antMatchers("/resources/**", "/user/create/**", "/user/checkusername/**", "/login")
+				.permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and()
+				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll().and()
+				.exceptionHandling().accessDeniedPage("/access-denied");
 		;
 
 		;

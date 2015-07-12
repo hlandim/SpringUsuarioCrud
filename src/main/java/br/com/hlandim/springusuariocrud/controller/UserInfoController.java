@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -99,6 +100,7 @@ public class UserInfoController {
 	 * @param model
 	 * @return
 	 */
+	@Secured("ROLE_ADMIN")
 	@RequestMapping(value = "/remove/{id}", method = RequestMethod.GET)
 	public String remove(Principal principal, HttpServletRequest httpRequest, @PathVariable("id") long id,
 			Model model) {

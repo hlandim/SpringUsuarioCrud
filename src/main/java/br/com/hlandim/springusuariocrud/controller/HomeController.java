@@ -13,6 +13,7 @@ import br.com.hlandim.springusuariocrud.service.IUserInfoService;
 
 /**
  * Controller respánsavel pelas chamadas a url principal.
+ * 
  * @author hlandim
  *
  */
@@ -30,6 +31,11 @@ public class HomeController {
 		modelAndView.addObject("usuarios", userInfoService.list());
 		modelAndView.addObject("usuarioLogado", userInfoService.getAuthentication());
 		return modelAndView;
+	}
+
+	@RequestMapping(value = "/access-denied")
+	public String accessDenied(HttpServletRequest httpRequest) {
+		return "access-denied";
 	}
 
 }
