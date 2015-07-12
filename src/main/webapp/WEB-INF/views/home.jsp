@@ -52,17 +52,17 @@
 					    <td><fmt:formatDate type="date" value="${parsedDate}" /></td>
 					    <td><spring:message code="userInfo.role.${usuario.role}"/></td>
 					    <td>
-					    	 <c:url var="edit_url" value="/user/edit/${usuario.id}" />
+					    	<c:url var="edit_url" value="/user/edit/${usuario.id}" />
 	        				<spring:message code="home.users.table.actions" var="editTitle"/>
 					    	<a href="${edit_url}" class="btn btn-default btn-lg" title="${editTitle}" >
 			  					<span class="glyphicon glyphicon-edit" ></span>
 	        				</a>
-	        				<%-- <sec:authorize access="hasRole('ADMIN')" var="teste"> --%>
+	        				<sec:authorize access="hasRole('ROLE_ADMIN')" var="teste">
 	        					<spring:message code="home.users.table.actions" var="removerTitle"/>
 		        				<button onclick="showModalRemoveUser('${usuario.id}','${usuario.name}')" class="btn btn-default btn-lg" title="${removerTitle}">
 				  					<span class="glyphicon glyphicon-remove" ></span>
 		        				</button>
-	        				<%-- </sec:authorize> --%>
+	        				</sec:authorize>
 	        			</td>
 					</tr>
 		        </c:forEach>
