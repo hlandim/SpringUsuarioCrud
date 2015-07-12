@@ -13,6 +13,7 @@ Tecnologias utilizadas:
 - BootStrap Framework (HTML, CSS, JavaScript)
 - Maven
 - Apache Tomcat 8
+- Internacionalização com ResourceBundleMessageSource (Spring Context)
 
 Requisitos:
 - Maven
