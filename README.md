@@ -3,6 +3,7 @@
 O projeto com um CRUD completo.
 
 Utilizando o Spring para criar um projeto web com um CRUD completo.
+
 Tecnologias utilizadas:
 - Spring MVC 4
 - Spring Security 4
@@ -13,6 +14,7 @@ Tecnologias utilizadas:
 - BootStrap Framework (HTML, CSS, JavaScript)
 - Maven
 - Apache Tomcat 8
+- Internacionalização com ResourceBundleMessageSource (Spring Context)
 
 Requisitos:
 - Maven
@@ -21,3 +23,6 @@ Requisitos:
 Banco de dados testados:
 - Postgres
 - MySQL
+
+Telas:
+![alt tag](https://drive.google.com/file/d/0ByYIwLOg3HXMTlhRRTZNSzRXa00/view?usp=sharing)
