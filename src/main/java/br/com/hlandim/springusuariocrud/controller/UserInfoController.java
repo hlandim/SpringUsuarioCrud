@@ -40,7 +40,7 @@ public class UserInfoController {
 	/**
 	 * Acesso a página principal.
 	 * 
-	 * @return
+	 * @return {@link UserInfo} para o formulario.
 	 */
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public UserInfo create() {
@@ -53,7 +53,7 @@ public class UserInfoController {
 	 * @param userInfo
 	 * @param result
 	 * @param model
-	 * @return
+	 * @return pagina de cradastro
 	 */
 	@RequestMapping(value = "/create/save", method = RequestMethod.POST)
 	public String save(@Valid UserInfo userInfo, BindingResult result, Model model) {
@@ -70,7 +70,7 @@ public class UserInfoController {
 	 * Utilizado para verificar se um usuario já esta cadastrdo.
 	 * 
 	 * @param username
-	 * @return
+	 * @return <code>true</code> se existir ou <code>false</code> caso nao exista.
 	 */
 	@RequestMapping(value = "/checkusername", method = RequestMethod.GET)
 	public @ResponseBody String checkUsernameExist(@RequestParam String username) {
@@ -82,7 +82,7 @@ public class UserInfoController {
 	 * 
 	 * @param id
 	 * @param model
-	 * @return
+	 * @return pagina de edicao.
 	 */
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable("id") int id, Model model) {
@@ -98,7 +98,7 @@ public class UserInfoController {
 	 * @param httpRequest
 	 * @param id
 	 * @param model
-	 * @return
+	 * @return deloga o usuario (se o usuario deletado for o mesmo que esta autenticado) ou retorna para pagina de listagem.
 	 */
 	@Secured("ROLE_ADMIN")
 	@RequestMapping(value = "/remove/{id}", method = RequestMethod.GET)

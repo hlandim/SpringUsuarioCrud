@@ -25,6 +25,12 @@ public class HomeController {
 
 	@Autowired
 
+	/**
+	 * Metodo Request para view home
+	 * @param httpRequest
+	 * @return pagina home.
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/")
 	public ModelAndView index(HttpServletRequest httpRequest) throws IOException {
 		ModelAndView modelAndView = new ModelAndView("home");
@@ -32,7 +38,12 @@ public class HomeController {
 		modelAndView.addObject("usuarioLogado", userInfoService.getAuthentication());
 		return modelAndView;
 	}
-
+	
+	/**
+	 * Request de acesso negado.
+	 * @param httpRequest
+	 * @return pagina de acesso negado.
+	 */
 	@RequestMapping(value = "/access-denied")
 	public String accessDenied(HttpServletRequest httpRequest) {
 		return "access-denied";

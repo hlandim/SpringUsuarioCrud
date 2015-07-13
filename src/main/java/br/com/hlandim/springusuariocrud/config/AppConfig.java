@@ -171,7 +171,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	/**
 	 * Configuração da internacionalização
 	 * 
-	 * @return
+	 * @return {@link ResourceBundleMessageSource}
 	 */
 	@Bean
 	public ResourceBundleMessageSource messageSource() {
@@ -185,7 +185,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	/**
 	 * Configuração do encoder de criptografia.
 	 * 
-	 * @return
+	 * @return {@link BCryptPasswordEncoder}
 	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -195,7 +195,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	/**
 	 * Configuração do idioma padrão
 	 * 
-	 * @return
+	 * @return {@link SessionLocaleResolver}
 	 */
 	@Bean
 	public LocaleResolver localeResolver() {
@@ -214,6 +214,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(interceptor);
 	}
 
+	/**
+	 * Define o encode padrão
+	 * @return {@link CharacterEncodingFilter}
+	 */
 	@Bean
 	public Filter characterEncodingFilter() {
 		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
