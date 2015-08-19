@@ -65,7 +65,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	private static final String PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY = "hibernate.ejb.naming_strategy";
 	private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
 	private static final String PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
-
 	@Resource
 	private Environment environment;
 
@@ -78,10 +77,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public ViewResolver getViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
-		resolver.setSuffix(".jsp");
+		resolver.setSuffix(".xhtml");
 		return resolver;
 	}
-
+	
 	/**
 	 * Configuraçao do banco.
 	 * 
